@@ -19,27 +19,23 @@ def welcome_screen():
 
 
 def drop_off():
-    name = input("Enter the name of the child to drop off: ").title()
-    children_list.append(name)
+    name = input("Enter the name of the child: ").title()
+    name_list.append(name)
     print(name, "has been added to the list")
 
 
 def pickup():
-    repeat = 1
     if num_children == 0:
-        print("Sorry there are no children to be picked up at MGS childcare")
+        print(">> Sorry there are currently no children in MGS childcare "
+              "to be picked up")
     else:
-        while repeat == 1:
-            name = input("Enter the name of the child to "
-                         "pick up: ").title()
-            if name not in children_list:
-                print(f"Sorry we cannot find a child with the name of {name} "
-                      f"at MGS childcare. Please try again.\n")
-            else:
-                remove_name = children_list.index(name)
-                children_list.pop(remove_name)
-                repeat = 0
-                print(f"{name} has been removed from the list!")
+        name = input("Enter the name of the child: ").title()
+        if name in name_list:
+            name_list.remove(name)
+            print(name, "has been removed from the list")
+        else:
+            print(">> Sorry we cannot find a child with the name of", name,
+                  "at MGS childcare")
 
 
 def calc_cost():
@@ -60,28 +56,26 @@ def print_roll():
     elif num_children == 1:
         print("Currently there is only", num_children, "child who is checked "
                                                        "in at MGS Childcare:")
-        for child in children_list:
+        for child in name_list:
             print(child)
     else:
         print("Currently there are", num_children, "children who are checked "
                                                    "in MGS Childcare:")
-        for children in children_list:
+        for children in name_list:
             print(children)
 
 
 choice = 0
-num_children = 0
-children_list = []
+name_list = []
 while choice != 5:
+    num_children = len(name_list)
     welcome_screen()
     choice = integer_checker("Enter your choice (number between 1-5): ")
     print()
     if choice == 1:
         drop_off()
-        num_children += 1
     elif choice == 2:
         pickup()
-        num_children -= 1
     elif choice == 3:
         calc_cost()
     elif choice == 4:
