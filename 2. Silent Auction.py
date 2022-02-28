@@ -44,7 +44,7 @@ while bid != -1:
     elif bid == -1:
         # then it calls the check reserve price function to end the code
         check_reserve_price()
-    # However if the bid is lower than the highest bid then...
+    # However if the bid is lower than the highest bid...
     else:
         # Then it asks the user to enter a higher bid
         print("Please enter a higher bid")
