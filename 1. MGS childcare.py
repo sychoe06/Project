@@ -1,5 +1,5 @@
 def integer_checker(question):
-    error = ">> Sorry, you must enter an integer\n"
+    error = "Sorry, you must enter an integer\n"
     number = ""
     while not number:
         try:
@@ -26,7 +26,7 @@ def drop_off():
 
 def pickup():
     if num_children == 0:
-        print(">> Sorry there are currently no children in MGS childcare "
+        print("Sorry there are currently no children in MGS childcare "
               "to be picked up")
     else:
         name = input("Enter the name of the child: ").title()
@@ -34,14 +34,14 @@ def pickup():
             name_list.remove(name)
             print(name, "has been removed from the list")
         else:
-            print(">> Sorry we cannot find a child with the name of", name,
+            print("Sorry we cannot find a child with the name of", name,
                   "at MGS childcare")
 
 
 def calc_cost():
     if num_children == 0:
-        print(">> Sorry there are currently no children in MGS childcare.\n"
-              ">> So there is no cost to calculate.")
+        print("Sorry there are currently no children in MGS childcare.\n"
+              "So there is no cost to calculate.")
     else:
         hours = integer_checker("Enter the number of hours to charge: ")
         cost = 12
