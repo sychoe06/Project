@@ -1,5 +1,5 @@
 def integer_checker(question):
-    error = "\nSorry, you must enter an integer\n"
+    error = ">> Sorry, you must enter an integer\n"
     number = ""
     while not number:
         try:
@@ -19,30 +19,74 @@ def welcome_screen():
 
 
 def drop_off():
-    name = input("Enter the name of the child: ")
-    name_list.append(name)
+    name = input("Enter the name of the child to drop off: ").title()
+    children_list.append(name)
     print(name, "has been added to the list")
 
 
 def pickup():
-    name = input("Enter the name of the child: ")
-    if name in name_list is True:
-        name_list.remove(name)
-        print(name, "has been removed from the list")
+    repeat = 1
+    if num_children == 0:
+        print("Sorry there are no children to be picked up at MGS childcare")
     else:
-        print("Please check the child's name because they are not on the list")
+        while repeat == 1:
+            name = input("Enter the name of the child to "
+                         "pick up: ").title()
+            if name not in children_list:
+                print(f"Sorry we cannot find a child with the name of {name} "
+                      f"at MGS childcare. Please try again.\n")
+            else:
+                remove_name = children_list.index(name)
+                children_list.pop(remove_name)
+                repeat = 0
+                print(f"{name} has been removed from the list!")
+
+
+def calc_cost():
+    if num_children == 0:
+        print(">> Sorry there are currently no children in MGS childcare.\n"
+              ">> So there is no cost to calculate.")
+    else:
+        hours = integer_checker("Enter the number of hours to charge: ")
+        cost = 12
+        charge = hours * cost * num_children
+        print(f"Charge is ${charge:,.2f}")
+
+
+def print_roll():
+    if num_children == 0:
+        print("Currently there are no children who are "
+              "checked at MGS Childcare")
+    elif num_children == 1:
+        print("Currently there is only", num_children, "child who is checked "
+                                                       "in at MGS Childcare:")
+        for child in children_list:
+            print(child)
+    else:
+        print("Currently there are", num_children, "children who are checked "
+                                                   "in MGS Childcare:")
+        for children in children_list:
+            print(children)
 
 
 choice = 0
-name_list = []
+num_children = 0
+children_list = []
 while choice != 5:
     welcome_screen()
     choice = integer_checker("Enter your choice (number between 1-5): ")
+    print()
     if choice == 1:
         drop_off()
+        num_children += 1
     elif choice == 2:
         pickup()
-
-
-
-
+        num_children -= 1
+    elif choice == 3:
+        calc_cost()
+    elif choice == 4:
+        print_roll()
+    elif choice >= 6 or choice == 0:
+        print(">> Sorry! Enter a number between 1-5! Please try again\n")
+    else:
+        print(">> Goodbye! Thank you for coming to MGS Childcare")
