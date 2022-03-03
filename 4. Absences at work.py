@@ -21,7 +21,6 @@ def calc_absences():
     # printing out the name of the employee who had the most days of absence
     print(f"Person with most days absent:\t\t\t\t{most_absent_person} with "
           f"{most_absent_days} days\n")
-    # Prints out the employees who were not absent at all during the year
     print("List of people not absent at all:")
     # Sorts the list of employees (who were not absent) in alphabetical order
     not_absent_people_list.sort()
