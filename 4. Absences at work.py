@@ -51,6 +51,7 @@ def calc_absences():
                 employee_over_average.append(employee)
         # Prints the employees who are over the average number of absence days
         for over_average in employee_over_average:
+            print(over_average[0], over_average[1])
             if len(over_average[0]) < 3:
                 print("\t" * 11 + over_average[0], "\t\t\t\t", over_average[1])
             elif len(over_average[0]) <= 6:
@@ -106,3 +107,5 @@ while employee_name != "$":
             print()  # adds a line of spacing
         else:
             print()  # adds a line of spacing
+
+

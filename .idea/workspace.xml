@@ -24,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Excercies" />
   </component>
-  <component name="RunManager" selected="Python.4. Absences at work">
+  <component name="RunManager" selected="Python.5. Speeding Motorists">
     <configuration name="1. MGS childcare" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,9 +132,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.4. Absences at work" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.5. Speeding Motorists" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.4. Absences at work" />
         <item itemvalue="Python.3. Taxi Trips" />
         <item itemvalue="Python.1. MGS childcare" />
       </list>
