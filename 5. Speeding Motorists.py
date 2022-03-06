@@ -107,4 +107,4 @@ while speeder_name != EXIT_SYMBOL:
             print(f"{speeder_name} to be fined $630")
             # Adds $630 to the total amount of fines
             total_amount_of_fine += 630
-            
+
